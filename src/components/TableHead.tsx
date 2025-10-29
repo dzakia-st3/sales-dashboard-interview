@@ -6,22 +6,22 @@ interface PropsType {
     handleSorting?: any
 }
 
-const TableHead: React.FC<PropsType> = ({columns, handleSorting}) => {
+const TableHead: React.FC<PropsType> = ({ columns, handleSorting }) => {
     const [SortField, setSortField] = useState("")
     const [order, setOrder] = useState("")
 
-    const handleSortingChange = (key:string) => {
+    const handleSortingChange = (key: string) => {
         const SortOrder = key === SortField && order === 'asc' ? 'desc' : 'asc'
-        
+
         setSortField(key)
-        setOrder (SortOrder)
+        setOrder(SortOrder)
         handleSorting(key, SortOrder)
     }
 
     return (
         <thead>
             <tr>
-                {columns?.map(({label, key, sortable}) => {
+                {columns?.map(({ label, key, sortable }) => {
                     const icon = sortable ? SortField === key && order === 'asc' ? "up" : SortField === key && order === 'desc' ? 'down' : "default" : ""
 
                     return (

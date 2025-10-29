@@ -11,8 +11,8 @@ const TableBody: React.FC<PropsType> = ({ columns, tableData }) => {
             {tableData?.slice(0, 11).map((data, idx) => {
                 return (
                     <tr key={data.id}>
-                        <td>{idx+1}</td>
-                        {columns.filter(({key}) => key !== 'number').map(({key, idx}) => {
+                        <td>{idx + 1}</td>
+                        {columns.filter(({ key }) => key !== 'number').map(({ key, idx }) => {
                             const tData = data[key] ? data[key] : '——'
                             return <td key={key}>{tData}</td>
                         })}
