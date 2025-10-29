@@ -32,9 +32,12 @@ const getDefaultSorting = (defaultTableData: DataType[], columns: ColumnType[]) 
     return sorted
 }
 
-export const useSortingTable = (data: DataType[], columns: ColumnType[]) => {
-    const [tableData, setTableData] = useState(() => getDefaultSorting(data, columns))
-
+export const useSortingTable = (
+    data: DataType[],
+    columns: ColumnType[]
+): [DataType[], (SortField: string, SortOrder: "asc" | "desc") => void] => {
+    const [tableData, setTableData] = useState(() => getDefaultSorting(data, columns));
+    
     const handleSorting = (SortField: string, SortOrder: "asc" | "desc") => {
         if (SortField) {
             const sorted = [...tableData].sort((a, b) => {
@@ -47,7 +50,7 @@ export const useSortingTable = (data: DataType[], columns: ColumnType[]) => {
             })
             setTableData(sorted)
         }
-    }
+    };
 
-    return [tableData, handleSorting]
+    return [tableData, handleSorting];
 }

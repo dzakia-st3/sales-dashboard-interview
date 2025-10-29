@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { ArrowUpIcon, ArrowDownIcon } from "@heroicons/react/24/solid";
 
 interface PropsType {
     columns?: any[]
@@ -21,19 +22,39 @@ const TableHead: React.FC<PropsType> = ({ columns, handleSorting }) => {
     return (
         <thead>
             <tr>
-                {columns?.map(({ label, key, sortable }) => {
-                    const icon = sortable ? SortField === key && order === 'asc' ? "up" : SortField === key && order === 'desc' ? 'down' : "default" : ""
+                {columns?.map(({ label, key, sortable }) => (
+                    <th
+                        key={key}
+                        onClick={sortable ? () => handleSortingChange(key) : undefined}
+                        className="px-3 py-2 bg-amber-400 cursor-pointer select-none"
+                    >
+                        {/* Bungkus label + icon */}
+                        <div className="flex items-center justify-between">
+                            <span>{label}</span>
 
-                    return (
-                        <th
-                            key={key}
-                            onClick={sortable && (() => handleSortingChange(key))}
-                            className={`icon bg-amber-400`}
-                        >
-                            {label}
-                        </th>
-                    )
-                })}
+                            {/* Icon container */}
+                            {sortable && (
+                                <div className="flex flex-col ml-1">
+                                    {/* Default: dua panah */}
+                                    {SortField !== key && (
+                                        <>
+                                            <ArrowUpIcon className="w-3 h-3 text-gray-400 transition-opacity duration-200" />
+                                            <ArrowDownIcon className="w-3 h-3 text-gray-400 -mt-1 transition-opacity duration-200" />
+                                        </>
+                                    )}
+                                    {/* Asc */}
+                                    {SortField === key && order === "asc" && (
+                                        <ArrowUpIcon className="w-3 h-3 text-black transition-transform duration-200 transform rotate-0" />
+                                    )}
+                                    {/* Desc */}
+                                    {SortField === key && order === "desc" && (
+                                        <ArrowDownIcon className="w-3 h-3 text-black transition-transform duration-200 transform rotate-0" />
+                                    )}
+                                </div>
+                            )}
+                        </div>
+                    </th>
+                ))}
             </tr>
         </thead>
     )

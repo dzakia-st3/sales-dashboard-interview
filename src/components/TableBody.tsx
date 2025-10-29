@@ -8,7 +8,7 @@ interface PropsType {
 const TableBody: React.FC<PropsType> = ({ columns, tableData }) => {
     return (
         <tbody>
-            {tableData?.slice(0, 11).map((data, idx) => {
+            {tableData?.map((data, idx) => {
                 return (
                     <tr key={data.id}>
                         <td>{idx + 1}</td>
