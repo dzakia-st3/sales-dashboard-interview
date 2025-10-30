@@ -14,8 +14,8 @@ It allows users to **view sales data in table and chart formats**, sort table co
 - **date-fns** – Date utility functions
 
 ## Installation & Running the Project
-1. Clone this repository: **git clone <repo-url>**
-2. Navigate to the project folder : **cd <project-folder>**
+1. Clone this repository: **git clone** `<repo-url>`
+2. Navigate to the project folder : **cd** `<project-folder>`
 3. Install dependecies using pnpm : **pnpm install**
 4. Run the development server : **pnpm dev**
 5. Open the app in your browser at [http://localhost:5173](http://localhost:5173)
