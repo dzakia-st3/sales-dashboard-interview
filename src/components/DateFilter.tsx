@@ -24,12 +24,11 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilterChange }) => {
     };
 
     return (
-        <div className="flex flex-wrap gap-4 items-end bg-white p-4 rounded-lg shadow-md mb-4">
-
+        <div className="flex flex-wrap gap-4 items-end bg-white/20 backdrop-blur-xs rounded-xs shadow-md border border-white/30 p-4 mb-2">
             <div className="flex flex-col">
-                <label className="text-sm font-semibold mb-1">Periode</label>
+                <label className="text-sm text-gray-700 font-semibold mb-1">Periode</label>
                 <select
-                    className="border p-2 rounded-md"
+                    className="border border-gray-500 text-gray-700 p-2 rounded-xs"
                     value={periodType}
                     onChange={(e) => setPeriodType(e.target.value as any)}
                 >
@@ -44,9 +43,9 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilterChange }) => {
             {periodType === "monthly" && (
                 <>
                     <div className="flex flex-col">
-                        <label className="text-sm font-semibold mb-1">Year</label>
+                        <label className="text-sm text-gray-700 font-semibold mb-1">Year</label>
                         <select
-                            className="border p-2 rounded-md"
+                            className="border text-gray-700 border-gray-500 p-2 rounded-xs"
                             value={year}
                             onChange={(e) => setYear(parseInt(e.target.value))}
                         >
@@ -57,9 +56,9 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilterChange }) => {
                     </div>
 
                     <div className="flex flex-col">
-                        <label className="text-sm font-semibold mb-1">Month</label>
+                        <label className="text-sm text-gray-700 font-semibold mb-1">Month</label>
                         <select
-                            className="border p-2 rounded-md"
+                            className="border text-gray-700 p-2 rounded-xs border-gray-500"
                             value={month ?? ""}
                             onChange={(e) => setMonth(e.target.value ? parseInt(e.target.value) : null)}
                         >
@@ -78,10 +77,10 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilterChange }) => {
             {periodType === "weekly" && (
                 <>
                     <div className="flex flex-col">
-                        <label className="text-sm font-semibold mb-1">Start date</label>
+                        <label className="text-sm text-gray-700 font-semibold mb-1">Start date</label>
                         <input
                             type="date"
-                            className="border p-2 rounded-md"
+                            className="border border-gray-500 text-gray-700 p-2 rounded-xs"
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
                         />
@@ -92,20 +91,20 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilterChange }) => {
             {periodType === "custom" && (
                 <>
                     <div className="flex flex-col">
-                        <label className="text-sm font-semibold mb-1">Start date</label>
+                        <label className="text-sm text-gray-700 font-semibold mb-1">Start date</label>
                         <input
                             type="date"
-                            className="border p-2 rounded-md"
+                            className="border border-gray-500 text-gray-700 p-2 rounded-xs"
                             value={startDate}
                             onChange={(e) => setStartDate(e.target.value)}
                         />
                     </div>
 
                     <div className="flex flex-col">
-                        <label className="text-sm font-semibold mb-1">End date</label>
+                        <label className="text-sm text-gray-700 font-semibold mb-1">End date</label>
                         <input
                             type="date"
-                            className="border p-2 rounded-md"
+                            className="border border-gray-500 p-2 text-gray-700 rounded-xs"
                             value={endDate}
                             onChange={(e) => setEndDate(e.target.value)}
                         />
@@ -115,7 +114,7 @@ const DateFilter: React.FC<DateFilterProps> = ({ onFilterChange }) => {
 
             <button
                 onClick={handleApply}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-md"
+                className="bg-gradient-to-r from-teal-400 to-indigo-500 hover:opacity-80 text-white font-semibold py-2 px-3 rounded-xs"
             >
                 Apply
             </button>

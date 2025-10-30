@@ -21,12 +21,12 @@ const TableHead: React.FC<PropsType> = ({ columns, handleSorting }) => {
 
     return (
         <thead>
-            <tr>
+            <tr className="bg-gradient-to-r from-teal-400 to-indigo-500">
                 {columns?.map(({ label, key, sortable }) => (
                     <th
                         key={key}
                         onClick={sortable ? () => handleSortingChange(key) : undefined}
-                        className="px-3 py-2 bg-amber-400 cursor-pointer select-none"
+                        className="p-3 font-sm text-white cursor-pointer select-none"
                     >
                         {/* Bungkus label + icon */}
                         <div className="flex items-center justify-between">
@@ -38,17 +38,17 @@ const TableHead: React.FC<PropsType> = ({ columns, handleSorting }) => {
                                     {/* Default: dua panah */}
                                     {SortField !== key && (
                                         <>
-                                            <ArrowUpIcon className="w-3 h-3 text-gray-400 transition-opacity duration-200" />
-                                            <ArrowDownIcon className="w-3 h-3 text-gray-400 -mt-1 transition-opacity duration-200" />
+                                            <ArrowUpIcon className="w-3 h-3 text-white transition-opacity duration-200" />
+                                            <ArrowDownIcon className="w-3 h-3 text-white -mt-1 transition-opacity duration-200" />
                                         </>
                                     )}
                                     {/* Asc */}
                                     {SortField === key && order === "asc" && (
-                                        <ArrowUpIcon className="w-3 h-3 text-black transition-transform duration-200 transform rotate-0" />
+                                        <ArrowUpIcon className="w-3 h-3 text-indigo-950 transition-transform duration-200 transform rotate-0" />
                                     )}
                                     {/* Desc */}
                                     {SortField === key && order === "desc" && (
-                                        <ArrowDownIcon className="w-3 h-3 text-black transition-transform duration-200 transform rotate-0" />
+                                        <ArrowDownIcon className="w-3 h-3 text-indigo-950 transition-transform duration-200 transform rotate-0" />
                                     )}
                                 </div>
                             )}

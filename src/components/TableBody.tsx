@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import React from 'react'
 
 interface PropsType {
@@ -10,11 +11,16 @@ const TableBody: React.FC<PropsType> = ({ columns, tableData }) => {
         <tbody>
             {tableData?.map((data, idx) => {
                 return (
-                    <tr key={data.id}>
-                        <td>{idx + 1}</td>
+                    <tr className={`${idx % 2 === 0? '' : 'bg-indigo-50'}`} key={data.id}>
+                        <td className='text-center'>{idx + 1}</td>
                         {columns.filter(({ key }) => key !== 'number').map(({ key, idx }) => {
                             const tData = data[key] ? data[key] : '——'
-                            return <td key={key}>{tData}</td>
+
+                            if (key === 'date' ) {
+                                return <td key={key} className='p-2 text-gray-600'>{tData !== '——' ? format(tData, 'dd MMM yy') : '——'}</td>
+                            } else {
+                                return <td key={key} className='p-2 text-gray-600'>{tData}</td>
+                            }
                         })}
 
                     </tr>
