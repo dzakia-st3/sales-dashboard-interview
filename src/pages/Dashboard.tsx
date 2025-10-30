@@ -68,7 +68,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <h3 className="w-full py-3 px-5 md:px-10 text-white text-3xl font-semibold  bg-gradient-to-r from-teal-400 to-indigo-500 tracking-wide">DASHBOARD</h3>
+            <h3 className="w-full py-3 px-5 md:px-10 text-white text-3xl font-semibold  bg-linear-to-r from-teal-400 to-indigo-500 tracking-wide">DASHBOARD</h3>
             <div className="my-3 mx-5 md:mx-10">
                 <Table
                     caption='NovaTech Sales Data'
@@ -76,7 +76,7 @@ const Dashboard = () => {
                     columns={columns}
                 />
                 <div className="bg-white/20 backdrop-blur-xs rounded-xs shadow-md border border-white/30">
-                    <h3 className="text-left text-2xl md:text-4xl font-light py-5 px-4 font-semibold">{`Sales Chart – ${label()}`}</h3>
+                    <h3 className="text-left text-2xl md:text-4xl py-5 px-4 font-semibold">{`Sales Chart – ${label()}`}</h3>
                     <hr className="border border-gray-50" />
                     <DateFilter
                         onFilterChange={(newFilters) => setFilters({
@@ -90,7 +90,7 @@ const Dashboard = () => {
                     <ChartContainer {...filters} />
                 </div>
             </div>
-            <h5 className="w-full py-3 px-5 md:px-10 text-white text-xs font-normal  bg-gradient-to-r from-teal-400 to-indigo-500 tracking-wide"> ©2025 ProjectName. All rights reserved.</h5>
+            <h5 className="w-full py-3 px-5 md:px-10 text-white text-xs font-normal bg-linear-to-r from-teal-400 to-indigo-500 tracking-wide"> ©2025 ProjectName. All rights reserved.</h5>
         </>
     )
 }

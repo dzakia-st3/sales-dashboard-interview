@@ -20,7 +20,7 @@ const Table: React.FC<PropsType> = ({ caption, data, columns, itemsPerPage = 10 
 
     return (
         <div className="overflow-x-auto p-3 bg-white/20 backdrop-blur-xs rounded-xs shadow-md border border-white/30 flex flex-col">
-            <h2 className="text-left text-2xl md:text-4xl font-light pb-5 font-semibold">{caption}</h2>
+            <h2 className="text-left text-2xl md:text-4xl pb-5 font-semibold">{caption}</h2>
             <table className="min-w-full table-auto border-separate border-spacing-0 text-[13px] md:text-base md:w-2/3 text-left">
                 <TableHead columns={columns ?? []} handleSorting={handleSorting} />
                 <TableBody columns={columns ?? []} tableData={paginatedData} />

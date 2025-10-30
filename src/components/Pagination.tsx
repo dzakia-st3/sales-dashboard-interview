@@ -42,7 +42,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, curre
         <div className="flex mt-4 space-x-1 items-center">
             {/* Prev */}
             <button onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
-                className='px-2 py-1 text-white bg-gradient-to-r  from-teal-400 to-indigo-500 rounded-xs hover:opacity-80 disabled:opacity-40'
+                className='px-2 py-1 text-white bg-linear-to-r from-teal-400 to-indigo-500 rounded-xs hover:opacity-80 disabled:opacity-40'
                 disabled={currentPage === 1}
             >
                 <ChevronLeftIcon className='w-5 h-5' />
@@ -51,7 +51,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, curre
             {/* Next */}
             <button
                 onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
-                className='px-2 py-1 text-white bg-gradient-to-r  from-teal-400 to-indigo-500 rounded-xs hover:opacity-80 disabled:opacity-50'
+                className='px-2 py-1 text-white bg-linear-to-r from-teal-400 to-indigo-500 rounded-xs hover:opacity-80 disabled:opacity-50'
                 disabled={currentPage === totalPages}
             >
                 <ChevronRightIcon className='w-5 h-5' />

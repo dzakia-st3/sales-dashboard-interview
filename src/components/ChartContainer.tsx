@@ -29,14 +29,14 @@ const ChartContainer: React.FC<ChartContainerProps> = ({
     });
 
     return (
-        <>
+        <div className="flex flex-col md:flex-row">
             <Suspense fallback={<div>Loading Line Chart...</div>}>
                 <SalesLineChart data={filtered.data} xDataKey={filtered.xDataKey} />
             </Suspense>
             <Suspense fallback={<div>Loading Line Chart...</div>}>
                 <SalesBarChart data={filtered.data} xDataKey={filtered.xDataKey} />
             </Suspense>
-        </>
+        </div>
     )
 }
 

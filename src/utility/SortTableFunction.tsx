@@ -11,20 +11,20 @@ interface DataType {
 const getDefaultSorting = (defaultTableData: DataType[], columns: ColumnType[]) => {
     const sorted = [...defaultTableData].sort((a, b) => {
         const filterColumn = columns.filter((column) => column.sortbyOrder)
-        console.log('filter column', filterColumn)
+        // console.log('filter column', filterColumn)
 
         let { key = 'date', sortbyOrder = 'desc' } = Object.assign(
             {},
             ...filterColumn
         )
-        console.log('key, sortbyOrder', { key, sortbyOrder })
+        // console.log('key, sortbyOrder', { key, sortbyOrder })
 
         if (a[key] === null) return 1
         if (b[key] === null) return -1
         if (a[key] === null && b[key] === null) return 0
 
         const ascending = a[key]?.toString().localeCompare(b[key]?.toString(), 'en', { numeric: true })
-        console.log('ascending', ascending)
+        // console.log('ascending', ascending)
 
         return sortbyOrder === 'asc' ? ascending : -ascending
     })

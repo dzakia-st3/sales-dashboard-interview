@@ -21,7 +21,7 @@ const TableHead: React.FC<PropsType> = ({ columns, handleSorting }) => {
 
     return (
         <thead>
-            <tr className="bg-gradient-to-r from-teal-400 to-indigo-500">
+            <tr className="bg-linear-to-r from-teal-400 to-indigo-500">
                 {columns?.map(({ label, key, sortable }) => (
                     <th
                         key={key}

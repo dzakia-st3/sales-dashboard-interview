@@ -30,7 +30,7 @@ const monthNames = [
 ];
 
 export const FilterSalesData = (data: DataSales[], { year, month, period, startDate, endDate }: FilterParams) => {
-    console.log(startDate, 'stardate')
+    // console.log(startDate, 'stardate')
     const now = new Date();
     const currentYear = now.getFullYear();
     const currentMonth = now.getMonth()
@@ -105,13 +105,12 @@ export const FilterSalesData = (data: DataSales[], { year, month, period, startD
         summary.sort((a, b) => {
             if (month != 0) {
                 // sort by week
-                console.log('kesini?')
                 return parseInt(a.label.replace("week", "")) - parseInt(b.label.replace("week", ""));
             } else {
                 // sort by month
                 const idxA = monthNames.indexOf(a.label);
                 const idxB = monthNames.indexOf(b.label);
-                console.log('kesana???', idxA, a, idxB, b)
+                // console.log('kesana???', idxA, a, idxB, b)
                 return a.year - b.year || idxA - idxB;
             }
         });
