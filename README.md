@@ -22,8 +22,8 @@ It allows users to **view sales data in table and chart formats**, sort table co
 
 
 ## Screenshots
-**Desktop screens**
-**Mobile screens**
+![Table Preview](./src/assets/ss-table.png)
+![Chart Preview](./src/assets/ss-chart.png)
 
 ## Live Demo
-🚀 [View Live Dashboard]()
+🚀 [View Live Dashboard](https://sales-dashboard-interview.netlify.app/)
