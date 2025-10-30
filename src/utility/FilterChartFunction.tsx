@@ -1,4 +1,4 @@
-import { parseISO, getYear, getMonth, getDate, addDays, differenceInDays, format, isSameDay, isWithinInterval, differenceInCalendarDays, startOfWeek, endOfWeek } from "date-fns";
+import { parseISO, getYear, getMonth, getDate, addDays, format, isSameDay, isWithinInterval, differenceInCalendarDays, startOfWeek, endOfWeek } from "date-fns";
 
 interface FilterParams {
     year?: number | null;
@@ -243,8 +243,8 @@ export const FilterSalesData = (data: DataSales[], { year, month, period, startD
                 map[key].total_sales += item.total_sales;
             });
             summary = Object.values(map).sort((a, b) => {
-                const [yearA, monthA] = a.label.split(" ");
-                const [yearB, monthB] = b.label.split(" ");
+                const [yearA] = a.label.split(" ");
+                const [yearB] = b.label.split(" ");
                 return parseInt(yearA) - parseInt(yearB);
             });
         }

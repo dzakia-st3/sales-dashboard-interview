@@ -13,7 +13,7 @@ const TableBody: React.FC<PropsType> = ({ columns, tableData }) => {
                 return (
                     <tr className={`${idx % 2 === 0? '' : 'bg-indigo-50'}`} key={data.id}>
                         <td className='text-center'>{idx + 1}</td>
-                        {columns.filter(({ key }) => key !== 'number').map(({ key, idx }) => {
+                        {columns.filter(({ key }) => key !== 'number').map(({ key }) => {
                             const tData = data[key] ? data[key] : '——'
 
                             if (key === 'date' ) {

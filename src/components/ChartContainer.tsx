@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import SalesBarChart from "./BarChart";
 import SalesLineChart from "./LineChart";
 import dataSales from "../data/dataSales.json"
@@ -30,8 +30,12 @@ const ChartContainer: React.FC<ChartContainerProps> = ({
 
     return (
         <>
-            <SalesLineChart data={filtered.data} xDataKey={filtered.xDataKey} />
-            <SalesBarChart data={filtered.data} xDataKey={filtered.xDataKey} />
+            <Suspense fallback={<div>Loading Line Chart...</div>}>
+                <SalesLineChart data={filtered.data} xDataKey={filtered.xDataKey} />
+            </Suspense>
+            <Suspense fallback={<div>Loading Line Chart...</div>}>
+                <SalesBarChart data={filtered.data} xDataKey={filtered.xDataKey} />
+            </Suspense>
         </>
     )
 }

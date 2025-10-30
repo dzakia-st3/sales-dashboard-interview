@@ -11,4 +11,14 @@ export default defineConfig({
       },
     }), tailwindcss()
   ],
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'recharts', 'tailwindcss', 'date-fns', '@heroicons/react']
+        }
+      }
+    }
+  }
 })

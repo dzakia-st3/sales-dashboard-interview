@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import ChartContainer from "./ChartContainer";
+import { useState } from "react";
 
 interface DateFilterProps {
     onFilterChange: (filters: {
